@@ -83,6 +83,11 @@ class Mycolum extends StatelessWidget {
             style: Theme.of(context).textTheme.headline4,
           ),
           RaisedButton(
+              child: Text("çıkış2 yap"),
+              onPressed: () async {
+                await myAuth.signOut();
+              }),
+          RaisedButton(
               child: Text("çıkış yap"),
               onPressed: () async {
                 await myAuth.signOut();
