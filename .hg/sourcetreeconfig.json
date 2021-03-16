@@ -1,0 +1,33 @@
+{
+  "$id": "51",
+  "AutoRefresh": true,
+  "AutoRefreshRemotes": true,
+  "CommitTextLinks": null,
+  "DraftCommitMsg": "",
+  "IncomingSavedCount": 0,
+  "LastCheckedRemotes": "2021-03-16T12:28:48.1635958+02:00",
+  "LastUsedView": 0,
+  "LogBranchFilterIndex": 0,
+  "OutgoingSavedCount": 0,
+  "SidebarExpandedItems": [
+    "Branches"
+  ],
+  "SidebarWidth": 210.0,
+  "SubtreeLinks": [],
+  "NeedsLargeFilesPull": false,
+  "RemoteProjectLinks": [
+    {
+      "$id": "52",
+      "BaseUrl": "https://www.github.com",
+      "Identifier": "ylcnyldrm/flutter_state_management",
+      "RemoteName": "ylcnyldrm",
+      "Type": 0,
+      "Username": "ylcnyldrm",
+      "CloneUrl": null,
+      "ProjectUrl": null,
+      "AccountId": null,
+      "AvatarUrl": null,
+      "DisplayName": "ylcnyldrm: https://www.github.com"
+    }
+  ]
+}
