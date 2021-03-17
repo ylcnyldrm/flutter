@@ -48,17 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MultiProvider(
-                    providers: [
-                      ChangeNotifierProvider(
-                        create: (_) => Counter(0),
-                      ),
-                      ChangeNotifierProvider(
-                        create: (_) => AuthServices(),
-                      ),
-                    ],
-                    child: IkinciSayfa(),
-                  ),
+                  builder: (context) => IkinciSayfa(),
                 ));
           },
           child: Text("Ikinci sayfaya git "),
