@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterstatemanagement/Counter.dart';
+import 'package:flutterstatemanagement/blog_kullanimi.dart';
 import 'package:flutterstatemanagement/ikinci_sayfa.dart';
 import 'package:provider/provider.dart';
 import 'package:flutterstatemanagement/auth_islemleri.dart';
@@ -43,17 +44,32 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => IkinciSayfa(),
-                ));
-          },
-          child: Text("Ikinci sayfaya git "),
+        child: Column(
+          children: [
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => IkinciSayfa(),
+                    ));
+              },
+              child: Text("Stream Kullanımı sayfasına git  "),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BlogKullanimi(),
+                    ));
+              },
+              child: Text("Blog kullanımı sayfasına git "),
+            )
+          ],
         ),
       ),
     );
   }
 }
+

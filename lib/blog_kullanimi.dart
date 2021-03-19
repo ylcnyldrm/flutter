@@ -4,23 +4,21 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:flutterstatemanagement/Counter.dart';
 import 'package:flutterstatemanagement/auth_islemleri.dart';
+import 'package:flutterstatemanagement/blog/sayac_blog.dart';
+import 'package:flutterstatemanagement/blog/sayac_event.dart';
 import 'package:provider/provider.dart';
 
-class IkinciSayfa extends StatefulWidget {
-
+class BlogKullanimi extends StatefulWidget {
   @override
-  _IkinciSayfaState createState() => _IkinciSayfaState();
+  _BlogKullanimiState createState() => _BlogKullanimiState();
 }
 
-class _IkinciSayfaState extends State<IkinciSayfa> {
-
-  final StreamController<int> _streamController = StreamController();
-  int _counter = 0;
+class _BlogKullanimiState extends State<BlogKullanimi> {
+  final _sayacBlog = SayacBlog();
 
   @override
   void dispose() {
     // TODO: implement dispose
-    _streamController.close();
     super.dispose();
   }
 
@@ -40,9 +38,9 @@ class _IkinciSayfaState extends State<IkinciSayfa> {
             //
             StreamBuilder<int>(
               initialData: 0,
-              stream: _streamController.stream,
-              builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
-                return Text("${snapshot.data}");
+              stream: _sayacBlog.sayac,
+              builder: (context, snapshot) {
+                return Text(snapshot.data.toString());
               },
             ),
           ],
@@ -52,14 +50,12 @@ class _IkinciSayfaState extends State<IkinciSayfa> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          FloatingActionButton(
-              heroTag: 1,
-              onPressed: () {
-                _streamController.sink.add(++_counter);
-              }),
+          FloatingActionButton(heroTag: 1, onPressed: () {
+            _sayacBlog.sayacEventSink.add(ArttirmaEvent());
+          }),
           FloatingActionButton(
             onPressed: () {
-              _streamController.sink.add(--_counter);
+              _sayacBlog.sayacEventSink.add(Azaltma());
             },
             heroTag: 2,
           ),
